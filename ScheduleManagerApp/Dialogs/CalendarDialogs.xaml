@@ -1,0 +1,30 @@
+﻿<ContentDialog
+    x:Class="ScheduleManagerApp.Dialogs.CalendarDialogs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ScheduleManagerApp.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="CREATE TASK"
+    PrimaryButtonText="Create"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+     
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Header="Name" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Row="1" Header="Description" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <CalendarDatePicker  Grid.Row="2" x:Name="DatePicker"  Header="Deadline" Date="{Binding Path=Deadline, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></CalendarDatePicker>
+        <TextBox Grid.Row="3" Header="Priority Level High/Medium/Low" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=PriorityString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <CheckBox Grid.Row="6" x:Name="Checkbox" IsChecked="{Binding Path=IsChecked, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Completed"></CheckBox>
+
+    </Grid>
+</ContentDialog>
